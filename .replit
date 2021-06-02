@@ -1,0 +1,2 @@
+language="java10"
+run="javac -cp .:./src/bbdd/*.jar -d ./bin ./src/**/*.java; java -cp ./bin/:./bin/bbdd/* main.Main"
