@@ -20,6 +20,10 @@ public class Login extends JFrame {
 		contentPane.setLayout(new BorderLayout(0, 0));
 		setContentPane(contentPane);
 		
+		JButton btnNewButton = new JButton("Boton");
+		btnNewButton.SetBounds(169, 166, 89, 23)
+		contentPanel.add(btnNewButton);
+		
 		setVisible(true);
 		
 	}
