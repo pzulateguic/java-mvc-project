@@ -3,9 +3,12 @@ package vistas;
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class Login extends JFrame {
 
@@ -21,8 +24,12 @@ public class Login extends JFrame {
 		setContentPane(contentPane);
 		
 		JButton btnNewButton = new JButton("Boton");
-		btnNewButton.SetBounds(169, 166, 89, 23)
-		contentPanel.add(btnNewButton);
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		btnNewButton.setBounds(169, 166, 89, 23);
+		contentPane.add(btnNewButton);
 		
 		setVisible(true);
 		
