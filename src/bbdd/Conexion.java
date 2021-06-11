@@ -11,7 +11,7 @@ public class Conexion {
     static int port = 3306;
     static String url = "jdbc:mysql://" + host + ":" + port + "/" + dbName + timeZone;
     static String user = "Y9axiNCQbQ";
-    static String pass = "QspPoK970C";
+    static String pass = "QspPoK97OC";
     static String driver = "com.mysql.cj.jdbc.Driver";
 
     static Connection conexion;
