@@ -10,8 +10,8 @@ public class Conexion {
     static String host = "remotemysql.com";
     static int port = 3306;
     static String url = "jdbc:mysql://" + host + ":" + port + "/" + dbName + timeZone;
-    static String user = "root";
-    static String pass = "manolo";
+    static String user = "Y9axiNCQbQ";
+    static String pass = "QspPoK970C";
     static String driver = "com.mysql.cj.jdbc.Driver";
 
     static Connection conexion;
