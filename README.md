@@ -1,2 +1,2 @@
 # java-mvc-project
-Projecto Vista-Modelo-Controlador en Java
+Proyecto Vista-Modelo-Controlador en Java

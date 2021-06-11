@@ -1,2 +1,2 @@
 language="java10"
-run="javac -cp .:./lib/*.jar -d ./bin ./src/**/*.java; java -cp ./bin/:./bin/* main.Main"
+run="javac -cp .:./lib/*.jar -d ./bin ./src/**/*.java; java -cp ./bin/:./lib/* main.Main"
