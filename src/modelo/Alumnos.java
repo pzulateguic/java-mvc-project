@@ -34,4 +34,17 @@ public class Alumnos {
 		}
 		return alumnos;
 	}
+	
+	public void borrarAlumno(int idAlumno) {
+		Conexion.ejecutarUpdate("DELETE FROM alumnos WHERE id="+idAlumno+";");
+	}
+
+	public void modificarAlumno(Alumno alumno) {
+		int id = alumno.getId();
+		String nombre = alumno.getNombre();
+		Date fechaNacimiento = alumno.getFechaNacimiento();
+		
+		Conexion.ejecutarUpdate("UPDATE alumnos SET nombre='"+nombre+"', fecha_nacimiento='"+fechaNacimiento+"' WHERE id="+id+";");
+		
+	}
 }

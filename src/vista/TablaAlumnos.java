@@ -11,6 +11,10 @@ import controlador.Central;
 import javax.swing.JTable;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.sql.Date;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
@@ -75,8 +79,36 @@ public class TablaAlumnos extends JFrame {
 					Object[] fila = new Object[3];
 					fila[0] = alumno.getId();
 					fila[1] = alumno.getNombre();
-					fila[2] = alumno.getFechaNacimiento().toLocaleString();
+					fila[2] = alumno.getFechaNacimiento().toString();
 					dtm.addRow(fila);
+				}
+			}
+		});
+		
+		botonBorrar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				int posicionTabla = table.getSelectedRow();
+				int idAlumno = (int) dtm.getValueAt(posicionTabla, 0);
+				new Central().borrarAlumno(idAlumno);
+			}
+		});
+		
+		botonModificar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				// Recoger los datos del alumno a modificar
+				int posicionTabla = table.getSelectedRow();
+				int id = (int) dtm.getValueAt(posicionTabla, 0);
+				String nombre = (String) dtm.getValueAt(posicionTabla, 1);
+				String fechaNacimientoTexto = (String) dtm.getValueAt(posicionTabla, 2);
+				try {
+					SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+					Date fechaNacimiento = new Date(format.parse(fechaNacimientoTexto).getTime());
+					Alumno alumno = new Alumno(id, nombre, fechaNacimiento);
+					// Llamar al controlador para el proceso de modificar --> Abrir ventana modificar
+					new Central().AbrirFormularioAlumnoModificar(alumno);
+				} catch (ParseException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
 				}
 			}
 		});

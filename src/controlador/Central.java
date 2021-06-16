@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import beans.Alumno;
 import modelo.Alumnos;
 import vista.FormularioAlumno;
+import vista.FormularioAlumnoModificar;
 
 public class Central {
 
@@ -26,5 +27,18 @@ public class Central {
 		ArrayList<Alumno> alumnos = new Alumnos().recogerAlumnos();
 		return alumnos;
 	}
+	
+	public void borrarAlumno(int id) {
+		new Alumnos().borrarAlumno(id);
+	}
 
+	public void modificarAlumno(Alumno alumno) {
+		// Llamar al modelo para actualizar el alumno en la BBDD
+		new Alumnos().modificarAlumno(alumno);
+	}
+
+	public void AbrirFormularioAlumnoModificar(Alumno alumno) {
+		new FormularioAlumnoModificar(alumno);
+	}
+	
 }
